@@ -1,17 +1,16 @@
-"use strict";
-import users from './users.js'
+'use strict';
+import users from './users.js';
 
 const getSortedUniqueSkills = users => {
-    const sortedUniqueSkills = users.reduce((acc, user) => {
-        acc.push(...user.skills);
-        return acc;
-
+  const sortedUniqueSkills = users
+    .reduce((acc, user) => {
+      acc.push(...user.skills);
+      return acc;
     }, [])
-        .filter((skill, index, skills) => index === skills.indexOf(skill))
-        .sort();
-    return sortedUniqueSkills
-}
-
+    .filter((skill, index, skills) => index === skills.indexOf(skill))
+    .sort();
+  return sortedUniqueSkills;
+};
 
 console.log(getSortedUniqueSkills(users));
 

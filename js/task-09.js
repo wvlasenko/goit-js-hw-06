@@ -1,13 +1,14 @@
-"use strict";
-import users from './users.js'
+'use strict';
+import users from './users.js';
 
 const getNamesSortedByFriendsCount = users => {
-    const userToSort = [...users];
-    const sortedUsers = userToSort.sort((compareUser1, compareUser2) => {
-        return compareUser1.friends.length - compareUser2.friends.length;
+  const userToSort = [...users];
+  const sortedUsers = userToSort
+    .sort((compareUser1, compareUser2) => {
+      return compareUser1.friends.length - compareUser2.friends.length;
     })
-        .map(user => user.name);
-    return sortedUsers;
+    .map(user => user.name);
+  return sortedUsers;
 };
 
 console.log(getNamesSortedByFriendsCount(users));
